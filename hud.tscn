@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyyjp0b6o05eo"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_e6yrm"]
+[ext_resource type="Texture2D" uid="uid://boftg2i5pipks" path="res://art/player/hud-char.excalidraw.svg" id="2_355g3"]
+[ext_resource type="Texture2D" uid="uid://wsimn7elcam1" path="res://art/environment/cartoonballon.excalidraw.svg" id="3_iyika"]
+[ext_resource type="Texture2D" uid="uid://cms5yykw212wr" path="res://art/environment/raindrop.svg" id="4_5a8cr"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_e6yrm")
+
+[node name="Hud-char_excalidraw" type="Sprite2D" parent="."]
+position = Vector2(155, 120)
+scale = Vector2(0.114224, 0.104463)
+texture = ExtResource("2_355g3")
+centered = false
+
+[node name="Title" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 15.0
+offset_right = 108.0
+offset_bottom = 116.0
+text = "idont
+waiting
+for
+water"
+
+[node name="Playbutton" type="Button" parent="."]
+offset_left = 217.0
+offset_top = 112.0
+offset_right = 290.0
+offset_bottom = 156.0
+text = "PLAY"
+
+[node name="Cartoonballon_excalidraw" type="Sprite2D" parent="."]
+position = Vector2(9, 9)
+scale = Vector2(0.264654, 0.297787)
+texture = ExtResource("3_iyika")
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visibility_layer = 2
+z_index = -1
+position = Vector2(148, -71)
+rotation = -6.28319
+scale = Vector2(0.1, 0.1)
+amount = 20
+lifetime = 2.0
+randomness = 0.36
+texture = ExtResource("4_5a8cr")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 400)
+direction = Vector2(-1, 2.08165e-12)
+spread = 100.0
+scale_amount_min = 0.03
+scale_amount_max = 0.03
+
+[connection signal="pressed" from="Playbutton" to="." method="_on_play_pressed"]

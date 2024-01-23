@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq0glif7aye04"]
+
+[ext_resource type="Texture2D" path="res://raindrop.svg" id="2_taoxr"]
+
+[sub_resource type="GDScript" id="GDScript_odm01"]
+script/source = "extends Node
+
+var gravity = 1000
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$Parallax.visible = false
+	#var random_velocity = Vector2(randf_range(0, 100), randf_range(300, 500))
+	#linear_velocity = random_velocity
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	#position.y += gravity * delta
+
+
+func _on_hud_start_game():
+	$CPUParticles2D.visible = false
+	$Parallax.visible = true
+	
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65vly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_taoxr")
+}],
+"loop": true,
+"name": &"drop",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pp1i"]
+radius = 41.0
+height = 84.0
+
+[node name="Raindrop" type="RigidBody2D"]
+scale = Vector2(0.25, 0.25)
+script = SubResource("GDScript_odm01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_65vly")
+animation = &"drop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6pp1i")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
