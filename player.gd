@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 10
 const JUMP_VELOCITY = -400.0
 @onready var anim = get_node("AnimationPlayer")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
