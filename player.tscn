@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://1ru86tiurtxq"]
+[gd_scene load_steps=15 format=3 uid="uid://1ru86tiurtxq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_r64pk"]
 [ext_resource type="Texture2D" uid="uid://dvg54bqx7drle" path="res://art/player/run/player-run1.excalidraw.svg" id="1_sakkq"]
 [ext_resource type="Texture2D" uid="uid://8ng7odb5yhtl" path="res://art/player/run/player-run2.excalidraw.svg" id="2_ylqup"]
 [ext_resource type="Texture2D" uid="uid://j6oskwq5gsxk" path="res://art/player/run/player-run3.excalidraw.svg" id="3_o8gf2"]
 [ext_resource type="Texture2D" uid="uid://crrw5hc32s5hd" path="res://art/player/run/player-run4.svg" id="4_5u4x6"]
+[ext_resource type="Texture2D" uid="uid://b2wcjuoinfkxi" path="res://art/player/jump/player-jump1.excalidraw.svg" id="6_lucyg"]
+[ext_resource type="Texture2D" uid="uid://c0gojh7wo3k88" path="res://art/player/jump/player-jump2.excalidraw.svg" id="7_3vua2"]
+[ext_resource type="Texture2D" uid="uid://hy1f5jh0ku14" path="res://art/player/jump/player-jump3.excalidraw.svg" id="8_p7s11"]
+[ext_resource type="Texture2D" uid="uid://p8mw8kvh00jk" path="res://art/player/jump/player-jump4.excalidraw.svg" id="9_lwf0u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvjo8"]
 radius = 157.0
@@ -27,6 +31,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lucyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3vua2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p7s11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lwf0u")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }]
 
@@ -77,9 +98,10 @@ position = Vector2(-2, -243)
 shape = SubResource("CapsuleShape2D_cvjo8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-159.333, -164)
+position = Vector2(10, -373.333)
 sprite_frames = SubResource("SpriteFrames_c8tj6")
-frame_progress = 0.848855
+animation = &"jump"
+frame_progress = 0.569175
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-5, -86)

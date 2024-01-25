@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dstjn7m3virlq"
-path="res://.godot/imported/player-jump3.svg-b1ba61c26b535791bc01ed6582204241.ctex"
+uid="uid://hy1f5jh0ku14"
+path="res://.godot/imported/player-jump3.excalidraw.svg-debb6ffc655256e7e003545ceef0d6e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/jump/player-jump3.svg"
-dest_files=["res://.godot/imported/player-jump3.svg-b1ba61c26b535791bc01ed6582204241.ctex"]
+source_file="res://art/player/jump/player-jump3.excalidraw.svg"
+dest_files=["res://.godot/imported/player-jump3.excalidraw.svg-debb6ffc655256e7e003545ceef0d6e9.ctex"]
 
 [params]
 
