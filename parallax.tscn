@@ -1,60 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://da2atuf4d22vl"]
 
-[ext_resource type="Texture2D" uid="uid://cgnbtqm8ypcmo" path="res://art/environment/road.excalidraw.svg" id="1_ohgrb"]
 [ext_resource type="PackedScene" uid="uid://1ru86tiurtxq" path="res://player.tscn" id="3_0nv2d"]
 [ext_resource type="Texture2D" uid="uid://dabbgfghbhs12" path="res://art/environment/sun.svg" id="3_bydl3"]
-[ext_resource type="Texture2D" path="res://art/road.excalidraw.svg" id="3_chm7e"]
+[ext_resource type="Texture2D" uid="uid://dxys1b8jkftpk" path="res://art/environment/road.excalidraw.svg" id="3_chm7e"]
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aefb3"]
 
 [node name="Parallax" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(5, 158)
-scale = Vector2(0.1, 0.1)
-motion_scale = Vector2(2.08165e-12, 2.08165e-12)
-motion_mirroring = Vector2(320, 2.08165e-12)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(117.775, 3.725)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("1_ohgrb")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(767.775, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(1407.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(2057.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(1407.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(2057.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(2707.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
-
-[node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/Ground"]
-position = Vector2(3357.77, 3.72498)
-scale = Vector2(0.3, 0.467)
-texture = ExtResource("3_chm7e")
 
 [node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
@@ -99,5 +54,15 @@ texture = ExtResource("4_h8lon")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_0nv2d")]
-position = Vector2(76, -63)
+position = Vector2(24, 160)
 scale = Vector2(0.045, 0.041)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_aefb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(142, 170)
+scale = Vector2(0.58998, 1)
+texture = ExtResource("3_chm7e")
