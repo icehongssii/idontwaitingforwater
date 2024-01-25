@@ -16,4 +16,5 @@ func _process(delta):
 
 func _on_timer_timeout():
 	score +=1  
-	$CanvasLayer/Label.text = str(score) +"S"
+
+	$CanvasLayer/Score.text = str(score) +"S"
