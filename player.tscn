@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://1ru86tiurtxq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_r64pk"]
-[ext_resource type="Texture2D" uid="uid://dvg54bqx7drle" path="res://art/player/run/player-run1.excalidraw.svg" id="1_sakkq"]
-[ext_resource type="Texture2D" uid="uid://8ng7odb5yhtl" path="res://art/player/run/player-run2.excalidraw.svg" id="2_ylqup"]
-[ext_resource type="Texture2D" uid="uid://j6oskwq5gsxk" path="res://art/player/run/player-run3.excalidraw.svg" id="3_o8gf2"]
-[ext_resource type="Texture2D" uid="uid://crrw5hc32s5hd" path="res://art/player/run/player-run4.svg" id="4_5u4x6"]
+[ext_resource type="Texture2D" path="res://art/player-run1.excalidraw.svg" id="1_sakkq"]
+[ext_resource type="Texture2D" path="res://art/player-run2.excalidraw.svg" id="2_ylqup"]
+[ext_resource type="Texture2D" path="res://art/player-run3.excalidraw.svg" id="3_o8gf2"]
+[ext_resource type="Texture2D" path="res://art/player-run4.svg" id="4_5u4x6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvjo8"]
 radius = 157.0
