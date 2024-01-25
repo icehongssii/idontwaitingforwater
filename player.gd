@@ -12,9 +12,11 @@ const JUMP_VELOCITY = -400.0
 @onready var anim = get_node("AnimationPlayer")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-	
+var time = 0
 
 func _physics_process(delta):
+	
+	
 	velocity.x = SPEED
 	state = RUNNING
 	
@@ -40,3 +42,9 @@ func _physics_process(delta):
 			
 			
 	move_and_slide()
+	
+
+	
+
+func _on_timer_timeout():
+	pass # Replace with function body.
