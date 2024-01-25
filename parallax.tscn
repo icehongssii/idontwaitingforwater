@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgnbtqm8ypcmo" path="res://art/environment/road.excalidraw.svg" id="1_ohgrb"]
 [ext_resource type="PackedScene" uid="uid://1ru86tiurtxq" path="res://player.tscn" id="3_0nv2d"]
 [ext_resource type="Texture2D" uid="uid://dabbgfghbhs12" path="res://art/environment/sun.svg" id="3_bydl3"]
-[ext_resource type="Texture2D" path="res://art/road.excalidraw.svg" id="3_chm7e"]
+[ext_resource type="Texture2D" uid="uid://cgnbtqm8ypcmo" path="res://art/environment/road.excalidraw.svg" id="3_chm7e"]
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
 
 [node name="Parallax" type="Node2D"]
