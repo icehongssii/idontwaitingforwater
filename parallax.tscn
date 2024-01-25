@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aefb3"]
+size = Vector2(265, 20)
 
 [node name="Parallax" type="Node2D"]
 
@@ -54,15 +55,16 @@ texture = ExtResource("4_h8lon")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_0nv2d")]
-position = Vector2(24, 160)
+position = Vector2(27, 170)
 scale = Vector2(0.045, 0.041)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(133, 180)
 shape = SubResource("RectangleShape2D_aefb3")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(142, 170)
+position = Vector2(143, 170)
 scale = Vector2(0.58998, 1)
 texture = ExtResource("3_chm7e")
