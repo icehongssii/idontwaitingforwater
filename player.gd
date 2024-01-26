@@ -7,30 +7,38 @@ enum {
 }
 
 var state = RUNNING	
-const SPEED = 30
-const JUMP_VELOCITY = -400.0
+const SPEED = 40
 @onready var anim = get_node("AnimationPlayer")
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var time = 0
+
+var jump_height: float = 20
+var jump_time_to_peak: float = 0.2
+var jump_time_to_descent: float = 0.4
+
+@onready var jump_velocity: float = ((2.0 * jump_height) / jump_time_to_peak) * -1
+@onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_descent)) * -1
+@onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1
+
+
+
+func get_gravity():
+	return jump_gravity if velocity.y > 0 else fall_gravity
 
 func _physics_process(delta):
-	
 	
 	velocity.x = SPEED
 	state = RUNNING
 	
 	if not is_on_floor(): # 공중이라
-		velocity.y += gravity * delta
+		velocity.y += get_gravity() * delta
+		
 		if velocity.y < 0: 
 			state = JUMPING
 		else:
-			state = FALLING 
+			state = FALLING
 #
 	## Handle jump.
 	if Input.is_action_just_pressed("enter") and is_on_floor():		
-		velocity.y = JUMP_VELOCITY	
-		velocity.y = move_toward(velocity.y, SPEED, SPEED)
+		velocity.y = jump_velocity
 		
 	match state:
 		RUNNING:
@@ -42,9 +50,3 @@ func _physics_process(delta):
 			
 			
 	move_and_slide()
-	
-
-	
-
-func _on_timer_timeout():
-	pass # Replace with function body.
