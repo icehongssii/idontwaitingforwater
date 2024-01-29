@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu00xvcr1vg81"]
+
+[ext_resource type="Texture2D" uid="uid://dobcold870emw" path="res://art/environment/ground_sprite.png" id="1_as8oy"]
+[ext_resource type="PackedScene" uid="uid://du7xiyv5lujsk" path="res://monster.tscn" id="2_req6o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbubm"]
+texture = ExtResource("1_as8oy")
+34:6/0 = 0
+34:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+34:6/0/physics_layer_0/angular_velocity = 0.0
+34:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ituxb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mbubm")
+
+[node name="Ground" type="TileMap"]
+position = Vector2(64, -10)
+tile_set = SubResource("TileSet_ituxb")
+format = 2
+layer_0/tile_data = PackedInt32Array(65532, 2228224, 6, 65533, 2228224, 6, 65534, 2228224, 6, 65535, 2228224, 6, 0, 2228224, 6, 1, 2228224, 6, 2, 2228224, 6, 3, 2228224, 6, 4, 2228224, 6, 5, 2228224, 6, 6, 2228224, 6, 7, 2228224, 6, 8, 2228224, 6, 9, 2228224, 6, 10, 2228224, 6, 11, 2228224, 6, 12, 2228224, 6, 13, 2228224, 6, 14, 2228224, 6, 15, 2228224, 6, 16, 2228224, 6, 17, 2228224, 6, 18, 2228224, 6, 19, 2228224, 6, 20, 2228224, 6, 21, 2228224, 6, 22, 2228224, 6, 23, 2228224, 6, 24, 2228224, 6, 25, 2228224, 6, 26, 2228224, 6, 27, 2228224, 6, 28, 2228224, 6, 29, 2228224, 6, 30, 2228224, 6, 31, 2228224, 6, 32, 2228224, 6, 33, 2228224, 6, 34, 2228224, 6, 35, 2228224, 6, 36, 2228224, 6, 37, 2228224, 6, 38, 2228224, 6, 39, 2228224, 6, 40, 2228224, 6, 41, 2228224, 6, 42, 2228224, 6, 43, 2228224, 6, 44, 2228224, 6, 45, 2228224, 6, 46, 2228224, 6, 47, 2228224, 6, 48, 2228224, 6, 49, 2228224, 6, 50, 2228224, 6, 51, 2228224, 6, 52, 2228224, 6, 53, 2228224, 6, 54, 2228224, 6, 55, 2228224, 6, 56, 2228224, 6, 57, 2228224, 6, 58, 2228224, 6, 59, 2228224, 6, 60, 2228224, 6, 61, 2228224, 6, 62, 2228224, 6, 63, 2228224, 6, 64, 2228224, 6, 65, 2228224, 6, 66, 2228224, 6, 67, 2228224, 6, 68, 2228224, 6, 69, 2228224, 6, 70, 2228224, 6, 71, 2228224, 6, 72, 2228224, 6, 73, 2228224, 6, 74, 2228224, 6, 75, 2228224, 6, 76, 2228224, 6, 77, 2228224, 6, 78, 2228224, 6, 79, 2228224, 6, 80, 2228224, 6, 81, 2228224, 6, 82, 2228224, 6, 83, 2228224, 6, 84, 2228224, 6, 85, 2228224, 6, 86, 2228224, 6, 87, 2228224, 6, 88, 2228224, 6, 89, 2228224, 6, 90, 2228224, 6, 91, 2228224, 6, 92, 2228224, 6, 93, 2228224, 6, 94, 2228224, 6, 95, 2228224, 6, 96, 2228224, 6, 97, 2228224, 6, 98, 2228224, 6, 99, 2228224, 6, 100, 2228224, 6, 101, 2228224, 6, 102, 2228224, 6, 103, 2228224, 6, 104, 2228224, 6, 105, 2228224, 6, 106, 2228224, 6, 107, 2228224, 6, 108, 2228224, 6, 109, 2228224, 6, 110, 2228224, 6, 111, 2228224, 6, 112, 2228224, 6, 113, 2228224, 6, 114, 2228224, 6, 115, 2228224, 6, 116, 2228224, 6, 117, 2228224, 6, 118, 2228224, 6, 119, 2228224, 6, 120, 2228224, 6, 121, 2228224, 6, 122, 2228224, 6, 123, 2228224, 6, 124, 2228224, 6, 125, 2228224, 6, 126, 2228224, 6, 127, 2228224, 6, 128, 2228224, 6, 129, 2228224, 6, 130, 2228224, 6, 131, 2228224, 6, 132, 2228224, 6, 133, 2228224, 6, 134, 2228224, 6, 135, 2228224, 6, 136, 2228224, 6, 137, 2228224, 6, 138, 2228224, 6, 139, 2228224, 6, 140, 2228224, 6, 141, 2228224, 6, 142, 2228224, 6, 143, 2228224, 6, 144, 2228224, 6, 145, 2228224, 6, 146, 2228224, 6, 147, 2228224, 6, 148, 2228224, 6, 149, 2228224, 6, 150, 2228224, 6, 151, 2228224, 6, 152, 2228224, 6, 153, 2228224, 6, 154, 2228224, 6, 155, 2228224, 6, 156, 2228224, 6, 157, 2228224, 6, 158, 2228224, 6, 159, 2228224, 6, 160, 2228224, 6, 161, 2228224, 6, 162, 2228224, 6, 163, 2228224, 6, 164, 2228224, 6, 165, 2228224, 6, 166, 2228224, 6, 167, 2228224, 6, 168, 2228224, 6, 169, 2228224, 6, 170, 2228224, 6, 171, 2228224, 6, 172, 2228224, 6, 173, 2228224, 6, 174, 2228224, 6, 175, 2228224, 6, 176, 2228224, 6, 177, 2228224, 6, 178, 2228224, 6, 179, 2228224, 6, 180, 2228224, 6, 181, 2228224, 6, 182, 2228224, 6, 183, 2228224, 6, 184, 2228224, 6, 185, 2228224, 6, 186, 2228224, 6, 187, 2228224, 6, 188, 2228224, 6, 189, 2228224, 6, 190, 2228224, 6, 191, 2228224, 6, 192, 2228224, 6)
+
+[node name="Monster3" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(303, 28)
+
+[node name="Monster4" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(514, 26)
+
+[node name="Monster5" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(514, 11)
+
+[node name="Monster6" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(512, -2)
+
+[node name="Monster7" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1535, 42)
+scale = Vector2(0.5, 0.5)
+
+[node name="Monster8" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(781, 28)
+
+[node name="Monster9" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1114, 30)
+
+[node name="Monster10" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1113, 16)
+
+[node name="Monster11" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1115, 1)
+
+[node name="Monster12" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1115, -14)
+
+[node name="Monster13" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1113, -27)
+
+[node name="Monster14" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1810, 57)
+scale = Vector2(0.5, 0.7)
+
+[node name="Monster15" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2240, 54)
+scale = Vector2(0.9, 0.7)
+
+[node name="Monster17" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2853, 30)
+
+[node name="Monster16" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2522, 56)
+scale = Vector2(0.9, 0.7)
+
+[node name="Monster18" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2522, 30)
+scale = Vector2(0.9, 0.7)

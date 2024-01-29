@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://da2atuf4d22vl"]
+[gd_scene load_steps=6 format=3 uid="uid://da2atuf4d22vl"]
 
 [ext_resource type="Script" path="res://parallax.gd" id="1_gdxry"]
+[ext_resource type="PackedScene" uid="uid://cs8l05bw8nfc3" path="res://ground_container.tscn" id="2_om2b7"]
 [ext_resource type="PackedScene" uid="uid://1ru86tiurtxq" path="res://player.tscn" id="3_0nv2d"]
 [ext_resource type="Texture2D" uid="uid://dabbgfghbhs12" path="res://art/environment/sun.svg" id="3_bydl3"]
-[ext_resource type="Texture2D" uid="uid://dxys1b8jkftpk" path="res://art/environment/road.excalidraw.svg" id="3_chm7e"]
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aefb3"]
-size = Vector2(265, 20)
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_gdxry")
+
+[node name="Node2D" parent="." instance=ExtResource("2_om2b7")]
+position = Vector2(25, 111)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -19,7 +19,7 @@ texture_filter = 1
 motion_scale = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sun"]
-position = Vector2(106, -1.52588e-05)
+position = Vector2(123, 1)
 scale = Vector2(0.113537, 0.0826271)
 texture = ExtResource("3_bydl3")
 centered = false
@@ -57,19 +57,8 @@ texture = ExtResource("4_h8lon")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_0nv2d")]
-position = Vector2(27, 170)
-scale = Vector2(0.045, 0.041)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(133, 180)
-shape = SubResource("RectangleShape2D_aefb3")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(143, 170)
-scale = Vector2(0.58998, 1)
-texture = ExtResource("3_chm7e")
+position = Vector2(2.08165e-12, 109)
+scale = Vector2(0.05, 0.045)
 
 [node name="Timer" type="Timer" parent="."]
 

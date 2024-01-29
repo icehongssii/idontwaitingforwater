@@ -1,34 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://du7xiyv5lujsk"]
+[gd_scene load_steps=14 format=3 uid="uid://du7xiyv5lujsk"]
 
 [ext_resource type="Texture2D" uid="uid://ddhb0ex1n1vjp" path="res://art/monster/idle/monster-idle1.svg" id="1_6l3cw"]
 [ext_resource type="Script" path="res://monster.gd" id="1_li7jm"]
 [ext_resource type="Texture2D" uid="uid://c12km03hyufjy" path="res://art/monster/idle/monster-idle2.svg.svg" id="2_xio2q"]
 [ext_resource type="Texture2D" uid="uid://b821pnl4g7ht7" path="res://art/monster/idle/monster-idle3.svg.svg" id="3_l3cuq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f2s2"]
-size = Vector2(93.3333, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iq0u4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_6l3cw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_xio2q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_l3cuq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="Animation" id="Animation_3w8d4"]
 resource_name = "Idle"
+length = 0.35
 loop_mode = 1
-step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -48,7 +28,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -75,22 +55,90 @@ _data = {
 "RESET": SubResource("Animation_dh2m5")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq0u4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6l3cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xio2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3cuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_6l3cw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7qqd"]
+radius = 7.35534
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_al66j"]
+radius = 6.66666
+height = 26.6667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akf2i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7htyn"]
+radius = 10.5409
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lurm6"]
+height = 86.6667
+
 [node name="Monster" type="CharacterBody2D"]
+position = Vector2(-16, 21)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_li7jm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.66667, -15)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_4f2s2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6.66666, -6.66655)
-scale = Vector2(0.128205, 0.119048)
-sprite_frames = SubResource("SpriteFrames_iq0u4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_qv62m")
 }
 autoplay = "Idle"
+speed_scale = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53.3333, -90)
+scale = Vector2(0.162393, 0.208334)
+sprite_frames = SubResource("SpriteFrames_iq0u4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(73.3333, -100)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_o7qqd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(56.6667, -116.667)
+shape = SubResource("CapsuleShape2D_al66j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(40, -103.333)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_akf2i")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.27157e-06, -90)
+shape = SubResource("CircleShape2D_7htyn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.27157e-06, -90)
+shape = SubResource("CircleShape2D_7htyn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(103.333, -90)
+shape = SubResource("CircleShape2D_7htyn")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(56.6667, -76.6667)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lurm6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
