@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu00xvcr1vg81"]
 
-[ext_resource type="Texture2D" uid="uid://dobcold870emw" path="res://art/environment/ground_sprite.png" id="1_as8oy"]
+[ext_resource type="Texture2D" uid="uid://dobcold870emw" path="res://art/environment/ground_sprite.png" id="1_tt3xo"]
 [ext_resource type="PackedScene" uid="uid://du7xiyv5lujsk" path="res://monster.tscn" id="2_req6o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbubm"]
-texture = ExtResource("1_as8oy")
+texture = ExtResource("1_tt3xo")
 34:6/0 = 0
 34:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 34:6/0/physics_layer_0/angular_velocity = 0.0

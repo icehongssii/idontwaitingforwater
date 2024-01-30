@@ -6,13 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://dabbgfghbhs12" path="res://art/environment/sun.svg" id="3_bydl3"]
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
 
-[node name="Parallax" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource("1_gdxry")
 
 [node name="Node2D" parent="." instance=ExtResource("2_om2b7")]
 position = Vector2(25, 111)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+offset_left = -27.0
+offset_top = -51.0
+offset_right = 774.0
+offset_bottom = 439.0
 
 [node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
@@ -71,4 +77,5 @@ offset_right = 285.0
 offset_bottom = 41.0
 text = "점"
 
+[connection signal="exit" from="Player" to="." method="_on_player_exit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

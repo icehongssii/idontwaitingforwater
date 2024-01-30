@@ -1,4 +1,4 @@
-extends Node2D
+gextends Node2D
 
 
 var score = 0 
@@ -16,5 +16,8 @@ func _process(delta):
 
 func _on_timer_timeout():
 	score +=1  
-
 	$CanvasLayer/Score.text = str(score) +"S"
+
+
+func _on_player_exit():
+	get_tree().change_scene_to_file("res://main.tscn")
