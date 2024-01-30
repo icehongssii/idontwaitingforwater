@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1ru86tiurtxq"]
+[gd_scene load_steps=22 format=3 uid="uid://1ru86tiurtxq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_r64pk"]
 [ext_resource type="Texture2D" uid="uid://dvg54bqx7drle" path="res://art/player/run/player-run1.excalidraw.svg" id="1_sakkq"]
@@ -8,8 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://p8mw8kvh00jk" path="res://art/player/fall/player-jump4.excalidraw.svg" id="6_rq8ac"]
 [ext_resource type="Texture2D" uid="uid://b2wcjuoinfkxi" path="res://art/player/player-jump1.excalidraw.svg" id="7_jrsve"]
 [ext_resource type="Texture2D" uid="uid://hy1f5jh0ku14" path="res://art/player/jump/player-jump3.excalidraw.svg" id="8_p7s11"]
+[ext_resource type="Texture2D" uid="uid://cw1o8xfj44d36" path="res://art/player/hurt/player-hurt1.excalidraw.svg" id="8_xmquf"]
+[ext_resource type="Texture2D" uid="uid://cyd86shwox53t" path="res://art/player/hurt/player-hurt2.excalidraw.svg" id="9_pmrev"]
+[ext_resource type="Texture2D" uid="uid://erm3qtkb5aeb" path="res://art/player/hurt/player-hurt3.excalidraw.svg" id="10_37u3v"]
+[ext_resource type="Texture2D" uid="uid://b6djcikttftj" path="res://art/player/hurt/player-hurt4.excalidraw.svg" id="11_fsao2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvjo8"]
+radius = 218.333
+height = 892.667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjgo0"]
 radius = 157.0
 height = 892.667
 
@@ -41,6 +49,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xmquf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pmrev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_37u3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fsao2")
+}],
+"loop": true,
+"name": &"hurt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -80,6 +105,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_m2pm0"]
+resource_name = "Hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_7o85h"]
@@ -167,40 +220,13 @@ tracks/1/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_m2pm0"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20xsn"]
 _data = {
 "Fall": SubResource("Animation_g1dsi"),
+"Hurt": SubResource("Animation_m2pm0"),
 "Idle": SubResource("Animation_7o85h"),
 "Jump": SubResource("Animation_c56hj"),
-"RESET": SubResource("Animation_vtymf"),
-"new_animation": SubResource("Animation_m2pm0")
+"RESET": SubResource("Animation_vtymf")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -208,9 +234,16 @@ position = Vector2(2.1684e-19, 2.1684e-19)
 scale = Vector2(1.8, 1.8)
 script = ExtResource("1_r64pk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10.6667, -449.333)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(358.333, -145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-352.778, -302.778)
 shape = SubResource("CapsuleShape2D_cvjo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5556, -448.333)
+shape = SubResource("CapsuleShape2D_pjgo0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -373.333)
@@ -226,3 +259,5 @@ libraries = {
 "": SubResource("AnimationLibrary_20xsn")
 }
 autoplay = "Idle"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
