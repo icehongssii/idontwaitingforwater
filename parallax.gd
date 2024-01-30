@@ -1,4 +1,4 @@
-gextends Node2D
+extends Node2D
 
 
 var score = 0 
