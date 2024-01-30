@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal crash
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -8,8 +9,18 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimationPlayer")
 
+enum    {
+	IDLE,
+	HURT
+}
+var state = IDLE
+
 func _physics_process(delta):
-	anim.play("Idle")
+	match state:
+		IDLE:
+			anim.play("Idle")
+		HURT:
+			anim.play("Hurt")
 	
 	# Add the gravity.
 	#if not is_on_floor():
@@ -37,5 +48,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_2d_body_entered(body):
-	if body.name =="Player":
-		print("detected")
+	if body.name == "Player":
+		state = HURT

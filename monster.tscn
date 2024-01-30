@@ -1,9 +1,74 @@
-[gd_scene load_steps=14 format=3 uid="uid://du7xiyv5lujsk"]
+[gd_scene load_steps=18 format=3 uid="uid://du7xiyv5lujsk"]
 
 [ext_resource type="Texture2D" uid="uid://ddhb0ex1n1vjp" path="res://art/monster/idle/monster-idle1.svg" id="1_6l3cw"]
 [ext_resource type="Script" path="res://monster.gd" id="1_li7jm"]
 [ext_resource type="Texture2D" uid="uid://c12km03hyufjy" path="res://art/monster/idle/monster-idle2.svg.svg" id="2_xio2q"]
 [ext_resource type="Texture2D" uid="uid://b821pnl4g7ht7" path="res://art/monster/idle/monster-idle3.svg.svg" id="3_l3cuq"]
+[ext_resource type="Texture2D" uid="uid://lcsee0in73gm" path="res://art/monster/hurt/monster-hurt.excalidraw.svg" id="5_ngja6"]
+[ext_resource type="Texture2D" uid="uid://cf2crfjashwxs" path="res://art/monster/hurt/monster-hurt2.excalidraw.svg" id="6_gn24k"]
+[ext_resource type="Texture2D" uid="uid://b5e3udhown31e" path="res://art/monster/hurt/monster-hurt3.excalidraw.svg" id="7_3s8kl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq0u4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6l3cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xio2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3cuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_6l3cw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ngja6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gn24k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3s8kl")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4y0j2"]
+resource_name = "Hurt"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
 
 [sub_resource type="Animation" id="Animation_3w8d4"]
 resource_name = "Idle"
@@ -51,29 +116,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv62m"]
 _data = {
+"Hurt": SubResource("Animation_4y0j2"),
 "Idle": SubResource("Animation_3w8d4"),
 "RESET": SubResource("Animation_dh2m5")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iq0u4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_6l3cw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_xio2q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_l3cuq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_6l3cw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7qqd"]
 radius = 7.35534
@@ -96,17 +142,18 @@ position = Vector2(-16, 21)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_li7jm")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53.3333, -90)
+scale = Vector2(0.162393, 0.208334)
+sprite_frames = SubResource("SpriteFrames_iq0u4")
+animation = &"hurt"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_qv62m")
 }
 autoplay = "Idle"
 speed_scale = 0.5
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(53.3333, -90)
-scale = Vector2(0.162393, 0.208334)
-sprite_frames = SubResource("SpriteFrames_iq0u4")
 
 [node name="Area2D" type="Area2D" parent="."]
 
