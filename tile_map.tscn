@@ -8,7 +8,7 @@ texture = ExtResource("1_tt3xo")
 34:6/0 = 0
 34:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 34:6/0/physics_layer_0/angular_velocity = 0.0
-34:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, 8, 8, -8, 8)
+34:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.0625, 8, 0, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ituxb"]
 physics_layer_0/collision_layer = 1
@@ -18,57 +18,480 @@ sources/0 = SubResource("TileSetAtlasSource_mbubm")
 position = Vector2(64, -10)
 tile_set = SubResource("TileSet_ituxb")
 format = 2
-layer_0/tile_data = PackedInt32Array(65532, 2228224, 6, 65533, 2228224, 6, 65534, 2228224, 6, 65535, 2228224, 6, 0, 2228224, 6, 1, 2228224, 6, 2, 2228224, 6, 3, 2228224, 6, 4, 2228224, 6, 5, 2228224, 6, 6, 2228224, 6, 7, 2228224, 6, 8, 2228224, 6, 9, 2228224, 6, 10, 2228224, 6, 11, 2228224, 6, 12, 2228224, 6, 13, 2228224, 6, 14, 2228224, 6, 15, 2228224, 6, 16, 2228224, 6, 17, 2228224, 6, 18, 2228224, 6, 19, 2228224, 6, 20, 2228224, 6, 21, 2228224, 6, 22, 2228224, 6, 23, 2228224, 6, 24, 2228224, 6, 25, 2228224, 6, 26, 2228224, 6, 27, 2228224, 6, 28, 2228224, 6, 29, 2228224, 6, 30, 2228224, 6, 31, 2228224, 6, 32, 2228224, 6, 33, 2228224, 6, 34, 2228224, 6, 35, 2228224, 6, 36, 2228224, 6, 37, 2228224, 6, 38, 2228224, 6, 39, 2228224, 6, 40, 2228224, 6, 41, 2228224, 6, 42, 2228224, 6, 43, 2228224, 6, 44, 2228224, 6, 45, 2228224, 6, 46, 2228224, 6, 47, 2228224, 6, 48, 2228224, 6, 49, 2228224, 6, 50, 2228224, 6, 51, 2228224, 6, 52, 2228224, 6, 53, 2228224, 6, 54, 2228224, 6, 55, 2228224, 6, 56, 2228224, 6, 57, 2228224, 6, 58, 2228224, 6, 59, 2228224, 6, 60, 2228224, 6, 61, 2228224, 6, 62, 2228224, 6, 63, 2228224, 6, 64, 2228224, 6, 65, 2228224, 6, 66, 2228224, 6, 67, 2228224, 6, 68, 2228224, 6, 69, 2228224, 6, 70, 2228224, 6, 71, 2228224, 6, 72, 2228224, 6, 73, 2228224, 6, 74, 2228224, 6, 75, 2228224, 6, 76, 2228224, 6, 77, 2228224, 6, 78, 2228224, 6, 79, 2228224, 6, 80, 2228224, 6, 81, 2228224, 6, 82, 2228224, 6, 83, 2228224, 6, 84, 2228224, 6, 85, 2228224, 6, 86, 2228224, 6, 87, 2228224, 6, 88, 2228224, 6, 89, 2228224, 6, 90, 2228224, 6, 91, 2228224, 6, 92, 2228224, 6, 93, 2228224, 6, 94, 2228224, 6, 95, 2228224, 6, 96, 2228224, 6, 97, 2228224, 6, 98, 2228224, 6, 99, 2228224, 6, 100, 2228224, 6, 101, 2228224, 6, 102, 2228224, 6, 103, 2228224, 6, 104, 2228224, 6, 105, 2228224, 6, 106, 2228224, 6, 107, 2228224, 6, 108, 2228224, 6, 109, 2228224, 6, 110, 2228224, 6, 111, 2228224, 6, 112, 2228224, 6, 113, 2228224, 6, 114, 2228224, 6, 115, 2228224, 6, 116, 2228224, 6, 117, 2228224, 6, 118, 2228224, 6, 119, 2228224, 6, 120, 2228224, 6, 121, 2228224, 6, 122, 2228224, 6, 123, 2228224, 6, 124, 2228224, 6, 125, 2228224, 6, 126, 2228224, 6, 127, 2228224, 6, 128, 2228224, 6, 129, 2228224, 6, 130, 2228224, 6, 131, 2228224, 6, 132, 2228224, 6, 133, 2228224, 6, 134, 2228224, 6, 135, 2228224, 6, 136, 2228224, 6, 137, 2228224, 6, 138, 2228224, 6, 139, 2228224, 6, 140, 2228224, 6, 141, 2228224, 6, 142, 2228224, 6, 143, 2228224, 6, 144, 2228224, 6, 145, 2228224, 6, 146, 2228224, 6, 147, 2228224, 6, 148, 2228224, 6, 149, 2228224, 6, 150, 2228224, 6, 151, 2228224, 6, 152, 2228224, 6, 153, 2228224, 6, 154, 2228224, 6, 155, 2228224, 6, 156, 2228224, 6, 157, 2228224, 6, 158, 2228224, 6, 159, 2228224, 6, 160, 2228224, 6, 161, 2228224, 6, 162, 2228224, 6, 163, 2228224, 6, 164, 2228224, 6, 165, 2228224, 6, 166, 2228224, 6, 167, 2228224, 6, 168, 2228224, 6, 169, 2228224, 6, 170, 2228224, 6, 171, 2228224, 6, 172, 2228224, 6, 173, 2228224, 6, 174, 2228224, 6, 175, 2228224, 6, 176, 2228224, 6, 177, 2228224, 6, 178, 2228224, 6, 179, 2228224, 6, 180, 2228224, 6, 181, 2228224, 6, 182, 2228224, 6, 183, 2228224, 6, 184, 2228224, 6, 185, 2228224, 6, 186, 2228224, 6, 187, 2228224, 6, 188, 2228224, 6, 189, 2228224, 6, 190, 2228224, 6, 191, 2228224, 6, 192, 2228224, 6)
-
-[node name="Monster3" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(303, 28)
-
-[node name="Monster4" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(514, 26)
-
-[node name="Monster5" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(514, 11)
-
-[node name="Monster6" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(512, -2)
-
-[node name="Monster7" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1535, 42)
-scale = Vector2(0.5, 0.5)
-
-[node name="Monster8" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(781, 28)
+layer_0/tile_data = PackedInt32Array(65532, 2228224, 6, 65533, 2228224, 6, 65534, 2228224, 6, 65535, 2228224, 6, 0, 2228224, 6, 1, 2228224, 6, 2, 2228224, 6, 18, 2228224, 6, 19, 2228224, 6, 20, 2228224, 6, 21, 2228224, 6, 22, 2228224, 6, 23, 2228224, 6, 24, 2228224, 6, 25, 2228224, 6, 26, 2228224, 6, 27, 2228224, 6, 28, 2228224, 6, 29, 2228224, 6, 30, 2228224, 6, 31, 2228224, 6, 32, 2228224, 6, 33, 2228224, 6, 34, 2228224, 6, 35, 2228224, 6, 36, 2228224, 6, 37, 2228224, 6, 38, 2228224, 6, 39, 2228224, 6, 40, 2228224, 6, 41, 2228224, 6, 42, 2228224, 6, 43, 2228224, 6, 44, 2228224, 6, 45, 2228224, 6, 46, 2228224, 6, 47, 2228224, 6, 48, 2228224, 6, 49, 2228224, 6, 50, 2228224, 6, 51, 2228224, 6, 52, 2228224, 6, 53, 2228224, 6, 54, 2228224, 6, 55, 2228224, 6, 56, 2228224, 6, 57, 2228224, 6, 58, 2228224, 6, 59, 2228224, 6, 60, 2228224, 6, 61, 2228224, 6, 62, 2228224, 6, 63, 2228224, 6, 64, 2228224, 6, 65, 2228224, 6, 66, 2228224, 6, 67, 2228224, 6, 68, 2228224, 6, 69, 2228224, 6, 70, 2228224, 6, 71, 2228224, 6, 72, 2228224, 6, 73, 2228224, 6, 74, 2228224, 6, 75, 2228224, 6, 76, 2228224, 6, 77, 2228224, 6, 78, 2228224, 6, 79, 2228224, 6, 80, 2228224, 6, 81, 2228224, 6, 82, 2228224, 6, 83, 2228224, 6, 84, 2228224, 6, 85, 2228224, 6, 86, 2228224, 6, 87, 2228224, 6, 88, 2228224, 6, 89, 2228224, 6, 90, 2228224, 6, 91, 2228224, 6, 92, 2228224, 6, 93, 2228224, 6, 94, 2228224, 6, 95, 2228224, 6, 96, 2228224, 6, 97, 2228224, 6, 98, 2228224, 6, 99, 2228224, 6, 100, 2228224, 6, 101, 2228224, 6, 102, 2228224, 6, 103, 2228224, 6, 104, 2228224, 6, 105, 2228224, 6, 106, 2228224, 6, 107, 2228224, 6, 108, 2228224, 6, 109, 2228224, 6, 110, 2228224, 6, 111, 2228224, 6, 112, 2228224, 6, 113, 2228224, 6, 114, 2228224, 6, 115, 2228224, 6, 116, 2228224, 6, 117, 2228224, 6, 118, 2228224, 6, 119, 2228224, 6, 120, 2228224, 6, 121, 2228224, 6, 122, 2228224, 6, 123, 2228224, 6, 124, 2228224, 6, 125, 2228224, 6, 126, 2228224, 6, 127, 2228224, 6, 128, 2228224, 6, 129, 2228224, 6, 130, 2228224, 6, 131, 2228224, 6, 132, 2228224, 6, 133, 2228224, 6, 134, 2228224, 6, 135, 2228224, 6, 136, 2228224, 6, 137, 2228224, 6, 138, 2228224, 6, 139, 2228224, 6, 140, 2228224, 6, 141, 2228224, 6, 142, 2228224, 6, 143, 2228224, 6, 144, 2228224, 6, 145, 2228224, 6, 146, 2228224, 6, 147, 2228224, 6, 148, 2228224, 6, 149, 2228224, 6, 150, 2228224, 6, 151, 2228224, 6, 152, 2228224, 6, 153, 2228224, 6, 154, 2228224, 6, 155, 2228224, 6, 156, 2228224, 6, 157, 2228224, 6, 158, 2228224, 6, 159, 2228224, 6, 160, 2228224, 6, 161, 2228224, 6, 162, 2228224, 6, 163, 2228224, 6, 164, 2228224, 6, 165, 2228224, 6, 166, 2228224, 6, 167, 2228224, 6, 168, 2228224, 6, 169, 2228224, 6, 170, 2228224, 6, 171, 2228224, 6, 172, 2228224, 6, 173, 2228224, 6, 174, 2228224, 6, 175, 2228224, 6, 176, 2228224, 6, 177, 2228224, 6, 178, 2228224, 6, 179, 2228224, 6, 180, 2228224, 6, 181, 2228224, 6, 182, 2228224, 6, 183, 2228224, 6, 184, 2228224, 6, 185, 2228224, 6, 186, 2228224, 6, 187, 2228224, 6, 188, 2228224, 6, 189, 2228224, 6, 190, 2228224, 6, 191, 2228224, 6, 192, 2228224, 6, 193, 2228224, 6, 194, 2228224, 6, 195, 2228224, 6, 196, 2228224, 6, 197, 2228224, 6, 198, 2228224, 6, 199, 2228224, 6, 200, 2228224, 6, 201, 2228224, 6, 202, 2228224, 6, 203, 2228224, 6, 204, 2228224, 6, 205, 2228224, 6, 206, 2228224, 6, 207, 2228224, 6, 208, 2228224, 6, 209, 2228224, 6, 210, 2228224, 6, 211, 2228224, 6, 212, 2228224, 6, 213, 2228224, 6, 214, 2228224, 6, 215, 2228224, 6, 216, 2228224, 6, 217, 2228224, 6, 218, 2228224, 6, 219, 2228224, 6, 220, 2228224, 6, 221, 2228224, 6, 222, 2228224, 6, 223, 2228224, 6, 224, 2228224, 6, 225, 2228224, 6, 226, 2228224, 6, 227, 2228224, 6, 228, 2228224, 6, 229, 2228224, 6, 230, 2228224, 6, 231, 2228224, 6, 232, 2228224, 6, 233, 2228224, 6, 234, 2228224, 6, 235, 2228224, 6, 236, 2228224, 6, 237, 2228224, 6, 238, 2228224, 6, 239, 2228224, 6, 240, 2228224, 6, 241, 2228224, 6, 242, 2228224, 6, 243, 2228224, 6, 244, 2228224, 6, 245, 2228224, 6, 246, 2228224, 6, 247, 2228224, 6, 248, 2228224, 6, 249, 2228224, 6, 250, 2228224, 6, 251, 2228224, 6, 252, 2228224, 6, 253, 2228224, 6, 254, 2228224, 6, 255, 2228224, 6, 256, 2228224, 6, 257, 2228224, 6, 258, 2228224, 6, 259, 2228224, 6, 260, 2228224, 6, 261, 2228224, 6, 262, 2228224, 6, 263, 2228224, 6, 264, 2228224, 6, 265, 2228224, 6, 266, 2228224, 6, 267, 2228224, 6, 268, 2228224, 6, 269, 2228224, 6, 270, 2228224, 6, 271, 2228224, 6, 272, 2228224, 6, 273, 2228224, 6, 274, 2228224, 6, 275, 2228224, 6, 276, 2228224, 6, 277, 2228224, 6, 278, 2228224, 6, 279, 2228224, 6, 280, 2228224, 6, 281, 2228224, 6, 282, 2228224, 6, 283, 2228224, 6, 284, 2228224, 6, 285, 2228224, 6, 286, 2228224, 6, 287, 2228224, 6, 288, 2228224, 6, 289, 2228224, 6, 290, 2228224, 6, 291, 2228224, 6, 292, 2228224, 6, 293, 2228224, 6, 294, 2228224, 6, 295, 2228224, 6, 296, 2228224, 6, 297, 2228224, 6, 298, 2228224, 6, 299, 2228224, 6, 300, 2228224, 6, 301, 2228224, 6, 302, 2228224, 6, 303, 2228224, 6, 304, 2228224, 6, 305, 2228224, 6, 306, 2228224, 6, 307, 2228224, 6, 308, 2228224, 6, 309, 2228224, 6, 310, 2228224, 6, 311, 2228224, 6, 312, 2228224, 6, 314, 2228224, 6, 315, 2228224, 6, 316, 2228224, 6, 317, 2228224, 6, 318, 2228224, 6, 319, 2228224, 6, 320, 2228224, 6, 321, 2228224, 6, 322, 2228224, 6, 323, 2228224, 6, 324, 2228224, 6, 325, 2228224, 6, 326, 2228224, 6, 327, 2228224, 6, 328, 2228224, 6, 329, 2228224, 6, 330, 2228224, 6, 331, 2228224, 6, 332, 2228224, 6, 333, 2228224, 6, 313, 2228224, 6, 334, 2228224, 6, 335, 2228224, 6, 336, 2228224, 6, 337, 2228224, 6, 338, 2228224, 6, 339, 2228224, 6, 340, 2228224, 6, 341, 2228224, 6, 342, 2228224, 6, 343, 2228224, 6, 344, 2228224, 6, 345, 2228224, 6, 346, 2228224, 6, 347, 2228224, 6, 348, 2228224, 6, 349, 2228224, 6, 350, 2228224, 6, 351, 2228224, 6, 352, 2228224, 6, 353, 2228224, 6, 354, 2228224, 6, 355, 2228224, 6, 356, 2228224, 6, 357, 2228224, 6, 358, 2228224, 6, 359, 2228224, 6, 360, 2228224, 6, 361, 2228224, 6, 362, 2228224, 6, 363, 2228224, 6, 364, 2228224, 6, 365, 2228224, 6, 366, 2228224, 6, 367, 2228224, 6, 368, 2228224, 6, 369, 2228224, 6, 370, 2228224, 6, 371, 2228224, 6, 372, 2228224, 6, 373, 2228224, 6, 374, 2228224, 6, 375, 2228224, 6, 376, 2228224, 6, 377, 2228224, 6, 378, 2228224, 6, 379, 2228224, 6, 380, 2228224, 6, 381, 2228224, 6, 382, 2228224, 6, 383, 2228224, 6, 384, 2228224, 6, 385, 2228224, 6, 386, 2228224, 6, 387, 2228224, 6, 388, 2228224, 6, 389, 2228224, 6, 390, 2228224, 6, 391, 2228224, 6, 392, 2228224, 6, 393, 2228224, 6, 394, 2228224, 6, 395, 2228224, 6, 396, 2228224, 6, 397, 2228224, 6, 398, 2228224, 6, 399, 2228224, 6, 3, 2228224, 6, 4, 2228224, 6, 5, 2228224, 6, 6, 2228224, 6, 7, 2228224, 6, 8, 2228224, 6, 9, 2228224, 6, 10, 2228224, 6, 11, 2228224, 6, 12, 2228224, 6, 13, 2228224, 6, 15, 2228224, 6, 16, 2228224, 6, 17, 2228224, 6, 65531, 2228224, 6, 65530, 2228224, 6, 65529, 2228224, 6, 65528, 2228224, 6, 65527, 2228224, 6, 65526, 2228224, 6, 14, 2228224, 6)
 
 [node name="Monster9" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1114, 30)
+position = Vector2(2459, 35)
+scale = Vector2(0.584749, 0.336609)
 
 [node name="Monster10" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1113, 16)
+position = Vector2(2473, 23)
 
 [node name="Monster11" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1115, 1)
-
-[node name="Monster12" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1115, -14)
+position = Vector2(2473, 14)
 
 [node name="Monster13" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1113, -27)
+position = Vector2(2474, 6)
+
+[node name="Monster67" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2474, -3)
+
+[node name="Monster68" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2474, -10)
+
+[node name="Monster69" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2474, -18)
+
+[node name="Monster70" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2474, -28)
+
+[node name="Monster71" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2474, -37)
+
+[node name="Monster12" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2898, 32)
+
+[node name="Monster55" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2898, 23)
+
+[node name="Monster60" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, 15)
+
+[node name="Monster72" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, 6)
+
+[node name="Monster73" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -1)
+
+[node name="Monster74" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -9)
+
+[node name="Monster75" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -19)
+
+[node name="Monster76" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -28)
+
+[node name="Monster61" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -38)
+
+[node name="Monster62" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2899, -47)
+
+[node name="Monster63" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -55)
+
+[node name="Monster77" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -64)
+
+[node name="Monster78" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -71)
+
+[node name="Monster79" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -79)
+
+[node name="Monster80" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -89)
+
+[node name="Monster81" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2900, -98)
 
 [node name="Monster14" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(1810, 57)
+position = Vector2(3466, 55)
+scale = Vector2(0.5, 0.7)
+
+[node name="Monster83" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(3708, 58)
+scale = Vector2(0.5, 0.7)
+
+[node name="Monster89" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(3901, 58)
+scale = Vector2(0.5, 0.7)
+
+[node name="Monster90" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4082, 56)
+scale = Vector2(0.5, 0.7)
+
+[node name="Monster91" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4255, 57)
 scale = Vector2(0.5, 0.7)
 
 [node name="Monster15" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(2240, 54)
-scale = Vector2(0.9, 0.7)
+position = Vector2(3199, 56)
+scale = Vector2(0.694274, 0.690868)
 
-[node name="Monster17" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(2853, 30)
+[node name="Monster87" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(3238, 65)
+rotation = 0.620019
+scale = Vector2(-0.55768, 1.16421)
 
-[node name="Monster16" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(2522, 56)
-scale = Vector2(0.9, 0.7)
+[node name="Monster88" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(3171, 78.0001)
+rotation = 0.620019
+scale = Vector2(-0.55768, 1.16421)
 
 [node name="Monster18" parent="." instance=ExtResource("2_req6o")]
-position = Vector2(2522, 30)
-scale = Vector2(0.9, 0.7)
+position = Vector2(6037, 58)
+scale = Vector2(0.694274, 0.690868)
+
+[node name="Monster161" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(6076, 67)
+rotation = 0.620019
+scale = Vector2(-0.55768, 1.16421)
+
+[node name="Monster162" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(6009, 80.0001)
+rotation = 0.620019
+scale = Vector2(-0.55768, 1.16421)
+
+[node name="Monster84" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1729, -15)
+scale = Vector2(0.113089, 0.119541)
+
+[node name="Monster86" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1889, 2)
+scale = Vector2(0.113089, 0.119541)
+
+[node name="Monster21" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, 25)
+
+[node name="Monster22" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, 12)
+
+[node name="Monster23" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -3)
+
+[node name="Monster24" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4531, -16)
+
+[node name="Monster25" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -30)
+
+[node name="Monster26" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -45)
+
+[node name="Monster27" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4531, -58)
+
+[node name="Monster28" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -76)
+
+[node name="Monster29" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -91)
+
+[node name="Monster30" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4531, -104)
+
+[node name="Monster31" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4533, -117)
+
+[node name="Monster46" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, 21)
+
+[node name="Monster47" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, 6)
+
+[node name="Monster49" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4932, -7)
+
+[node name="Monster50" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -21)
+
+[node name="Monster51" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -36)
+
+[node name="Monster52" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4932, -49)
+
+[node name="Monster53" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -67)
+
+[node name="Monster54" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -82)
+
+[node name="Monster56" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4932, -95)
+
+[node name="Monster57" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -108)
+
+[node name="Monster58" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4935, -121)
+
+[node name="Monster59" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4933, -134)
+
+[node name="Monster92" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4935, -147)
+
+[node name="Monster93" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4936, -157)
+
+[node name="Monster94" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4934, -170)
+
+[node name="Monster95" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4936, -183)
+
+[node name="Monster96" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4937, -197)
+
+[node name="Monster97" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4935, -210)
+
+[node name="Monster98" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4937, -223)
+
+[node name="Monster99" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(4937, -235)
+
+[node name="Monster119" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5285, -235)
+
+[node name="Monster120" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5286, -245)
+
+[node name="Monster121" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5284, -258)
+
+[node name="Monster122" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5286, -271)
+
+[node name="Monster123" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -285)
+
+[node name="Monster124" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5285, -298)
+
+[node name="Monster125" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -311)
+
+[node name="Monster126" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -323)
+
+[node name="Monster48" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, 28)
+
+[node name="Monster100" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, 13)
+
+[node name="Monster101" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5285, 0)
+
+[node name="Monster102" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -14)
+
+[node name="Monster103" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -29)
+
+[node name="Monster104" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5285, -42)
+
+[node name="Monster105" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -60)
+
+[node name="Monster106" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -75)
+
+[node name="Monster107" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5285, -88)
+
+[node name="Monster108" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -101)
+
+[node name="Monster109" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5288, -114)
+
+[node name="Monster110" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5286, -127)
+
+[node name="Monster111" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5288, -140)
+
+[node name="Monster112" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5289, -150)
+
+[node name="Monster113" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5287, -163)
+
+[node name="Monster114" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5289, -176)
+
+[node name="Monster115" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5290, -190)
+
+[node name="Monster116" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5288, -203)
+
+[node name="Monster117" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5290, -216)
+
+[node name="Monster118" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5290, -228)
+
+[node name="Monster127" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5681, -230)
+
+[node name="Monster128" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5682, -240)
+
+[node name="Monster129" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5680, -253)
+
+[node name="Monster130" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5682, -266)
+
+[node name="Monster131" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -280)
+
+[node name="Monster132" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5681, -293)
+
+[node name="Monster133" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -306)
+
+[node name="Monster134" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -318)
+
+[node name="Monster155" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5682, -337)
+
+[node name="Monster156" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5684, -350)
+
+[node name="Monster157" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5685, -364)
+
+[node name="Monster158" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -377)
+
+[node name="Monster159" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5685, -390)
+
+[node name="Monster160" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5685, -402)
+
+[node name="Monster135" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, 33)
+
+[node name="Monster136" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, 18)
+
+[node name="Monster137" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5681, 5)
+
+[node name="Monster138" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -9)
+
+[node name="Monster139" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -24)
+
+[node name="Monster140" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5681, -37)
+
+[node name="Monster141" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -55)
+
+[node name="Monster142" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -70)
+
+[node name="Monster143" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5681, -83)
+
+[node name="Monster144" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -96)
+
+[node name="Monster145" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5684, -109)
+
+[node name="Monster146" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5682, -122)
+
+[node name="Monster147" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5684, -135)
+
+[node name="Monster148" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5685, -145)
+
+[node name="Monster149" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5683, -158)
+
+[node name="Monster150" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5685, -171)
+
+[node name="Monster151" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5686, -185)
+
+[node name="Monster152" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5684, -198)
+
+[node name="Monster153" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5686, -211)
+
+[node name="Monster154" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(5686, -223)
+
+[node name="Monster7" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1185, 28)
+slide_on_ceiling = false
+
+[node name="Monster16" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1185, 28)
+slide_on_ceiling = false
+
+[node name="Monster66" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(539, 66)
+scale = Vector2(0.743041, 0.879058)
+slide_on_ceiling = false
+
+[node name="Monster163" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(358, 42)
+scale = Vector2(0.366497, 0.503928)
+slide_on_ceiling = false
+
+[node name="Monster82" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(884, 69)
+scale = Vector2(0.743041, 0.879058)
+slide_on_ceiling = false
+
+[node name="Monster85" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(885, 45)
+scale = Vector2(0.743041, 0.879058)
+slide_on_ceiling = false
+
+[node name="Monster195" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1363, 68)
+scale = Vector2(0.743041, 0.879058)
+slide_on_ceiling = false
+
+[node name="Monster196" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(1364, 44)
+scale = Vector2(0.743041, 0.879058)
+slide_on_ceiling = false
+
+[node name="Monster4" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2003, 30)
+slide_on_ceiling = false
+
+[node name="Monster2" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2003, 16)
+slide_on_ceiling = false
+platform_wall_layers = 1
+
+[node name="Monster5" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2242, 27)
+slide_on_ceiling = false
+
+[node name="Monster6" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2241, 15)
+slide_on_ceiling = false
+platform_wall_layers = 1
+
+[node name="Monster8" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2242, 3)
+slide_on_ceiling = false
+
+[node name="Monster17" parent="." instance=ExtResource("2_req6o")]
+position = Vector2(2242, -8)
+slide_on_ceiling = false
+platform_wall_layers = 1

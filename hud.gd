@@ -6,6 +6,14 @@ signal start_game
 func _ready():
 	pass
 
+func show_message(text):
+	$Message.text = text
+	$Message.show()
+
+func show_game_over():
+	show_message("Game Over")
+	# Wait until the MessageTimer has counted down.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -15,9 +23,4 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	$Title.visible = false
-	$Playbutton.visible = false
-	$"Hud-char_excalidraw".visible = false
-	$Cartoonballon_excalidraw.visible = false
-	$CPUParticles2D.visible = false
 	start_game.emit()

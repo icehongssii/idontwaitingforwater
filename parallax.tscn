@@ -1,31 +1,93 @@
-[gd_scene load_steps=6 format=3 uid="uid://da2atuf4d22vl"]
+[gd_scene load_steps=9 format=3 uid="uid://da2atuf4d22vl"]
 
 [ext_resource type="Script" path="res://parallax.gd" id="1_gdxry"]
-[ext_resource type="PackedScene" uid="uid://cs8l05bw8nfc3" path="res://ground_container.tscn" id="2_om2b7"]
+[ext_resource type="PackedScene" uid="uid://cjwpbsnk3ixf8" path="res://ground_container.tscn" id="2_om2b7"]
 [ext_resource type="PackedScene" uid="uid://1ru86tiurtxq" path="res://player.tscn" id="3_0nv2d"]
 [ext_resource type="Texture2D" uid="uid://dabbgfghbhs12" path="res://art/environment/sun.svg" id="3_bydl3"]
 [ext_resource type="Texture2D" uid="uid://cj5lrtld8t3hr" path="res://art/environment/cloud.svg" id="4_h8lon"]
+[ext_resource type="AudioStream" uid="uid://bor3xvrb3tjgs" path="res://art/sound/playbgm.mp3" id="6_wkqp6"]
+[ext_resource type="AudioStream" uid="uid://cgase5wdx0ikq" path="res://art/sound/House In a Forest Loop.ogg" id="7_7xdir"]
+
+[sub_resource type="Theme" id="Theme_n1leh"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gdxry")
 
+[node name="Player" parent="." instance=ExtResource("3_0nv2d")]
+position = Vector2(48, 50)
+scale = Vector2(0.05, 0.045)
+
 [node name="Node2D" parent="." instance=ExtResource("2_om2b7")]
-position = Vector2(25, 111)
+position = Vector2(0, -1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="playbutton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.472
+anchor_top = 0.163
+anchor_right = 0.668
+anchor_bottom = 0.437
+offset_left = -10.04
+offset_top = 4.66
+offset_right = 2.23999
+offset_bottom = 2.34
+text = "Enter
+To
+Retry"
+
+[node name="button" type="Button" parent="CanvasLayer"]
+offset_left = 142.0
+offset_top = 35.0
+offset_right = 217.0
+offset_bottom = 82.0
+text = "SAVE"
+
+[node name="nicknameText" type="TextEdit" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 33.0
+offset_right = 140.0
+offset_bottom = 81.0
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 183.0
+offset_top = 20.0
+offset_right = 223.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.690196, 0, 0, 1)
+text = "S"
+
+[node name="ranks" type="Label" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 141.0
+offset_bottom = 112.0
+theme = SubResource("Theme_n1leh")
+theme_override_colors/font_color = Color(0.607843, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
-offset_left = -27.0
-offset_top = -51.0
-offset_right = 774.0
-offset_bottom = 439.0
+anchors_preset = -1
+anchor_left = -0.104
+anchor_top = 0.544
+anchor_right = -0.104
+anchor_bottom = 0.544
+offset_left = -32.72
+offset_top = -272.92
+offset_right = 768.28
+offset_bottom = 217.08
 
 [node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 1
 texture_filter = 1
 motion_scale = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sun"]
-position = Vector2(123, 1)
+position = Vector2(122, 28)
 scale = Vector2(0.113537, 0.0826271)
 texture = ExtResource("3_bydl3")
 centered = false
@@ -34,13 +96,13 @@ centered = false
 motion_mirroring = Vector2(320, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud"]
-position = Vector2(7, 49)
+position = Vector2(242, 69)
 scale = Vector2(0.104167, 0.0798319)
 texture = ExtResource("4_h8lon")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/cloud"]
-position = Vector2(73, 68)
+position = Vector2(89, 73)
 scale = Vector2(0.104167, 0.0798319)
 texture = ExtResource("4_h8lon")
 centered = false
@@ -51,31 +113,26 @@ scale = Vector2(0.104167, 0.0798319)
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/cloud"]
-position = Vector2(202, 58)
+position = Vector2(158, 87)
 scale = Vector2(0.104167, 0.0798319)
 texture = ExtResource("4_h8lon")
 centered = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/cloud"]
-position = Vector2(272, 40)
+position = Vector2(6, 51)
 scale = Vector2(0.104167, 0.0798319)
 texture = ExtResource("4_h8lon")
 centered = false
 
-[node name="Player" parent="." instance=ExtResource("3_0nv2d")]
-position = Vector2(2.08165e-12, 109)
-scale = Vector2(0.05, 0.045)
+[node name="playmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wkqp6")
+autoplay = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="deathmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7xdir")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 245.0
-offset_top = 18.0
-offset_right = 285.0
-offset_bottom = 41.0
-text = "점"
-
-[connection signal="exit" from="Player" to="." method="_on_player_exit"]
+[connection signal="make_faster" from="." to="Player" method="_on_world_make_faster"]
+[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="CanvasLayer/button" to="." method="_on_button_pressed"]
